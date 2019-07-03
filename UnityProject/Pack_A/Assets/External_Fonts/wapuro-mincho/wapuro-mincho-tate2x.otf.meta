@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 713749906de3af44494e3c2b1e18716a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Wapuro Mincho
+  fontNames:
+  - Wapuro Mincho
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 70c4b018fd9bf9b44a851b9d9c46dd3e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
