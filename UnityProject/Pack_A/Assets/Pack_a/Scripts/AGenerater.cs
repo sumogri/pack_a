@@ -21,12 +21,13 @@ public class AGenerater : MonoBehaviour
             return;
 
         time = 0;
-        Instantiate(aPrefab, transform);
+        var i = Instantiate(aPrefab, transform.parent);
+        i.transform.position = transform.position;
     }
 
     [Conditional("UNITY_EDITOR")]
     private void OnDrawGizmos()
     {
-        
+        Gizmos.DrawWireCube(transform.position,Vector3.one);
     }
 }
