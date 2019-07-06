@@ -1,34 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
+using UniRx.Async;
 
 public class ResultView : MonoBehaviour
 {
     [Zenject.Inject] private ScoreModel score;
     [Zenject.Inject] private GameModel game;
-    [SerializeField] private GameObject contetntRoot;
-    [SerializeField] private TextMesh scoreText;
+    [SerializeField] private GameObject contentRoot;
+    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private StarView star1;
     [SerializeField] private StarView star2;
     [SerializeField] private StarView star3;
     [SerializeField] private GameObject[] activatedObjs;
-
+    private bool isActivated = false;
+    
     // Start is called before the first frame update
     void Start()
     {
-        game.OnEnd.Subscribe(_ => OnEnd());
+        game.OnEnd.Subscribe(async _ => await OnEnd());
         game.OnRetry.Subscribe(_ => OnRetry());
     }
 
-    private void OnEnd()
-    {        
-        StartCoroutine(ActivateColoutine());
+    private async UniTask OnEnd()
+    {
+        await Activate();
     }
 
     private void OnRetry()
     {
+        if (!isActivated)
+            return;
+
         star1.Init();
         star2.Init();
         star3.Init();
@@ -36,16 +43,40 @@ public class ResultView : MonoBehaviour
         {
             o.SetActive(false);
         }
+        contentRoot.SetActive(false);
+
+        isActivated = false;
     }
 
-    private IEnumerator ActivateColoutine()
+    private async UniTask Activate()
     {
+        isActivated = true;
+        contentRoot.SetActive(true);
         scoreText.text = score.Score.ToString();
-        foreach (var o in activatedObjs)
-        {
-            o.SetActive(false);
+        var starCount = score.GetStar();
+
+        if(starCount >= 1)
+        { 
+            await UniTask.Delay(100);
+            star1.Activate();
         }
 
-        yield return null;
+        if (starCount >= 2)
+        {
+            await UniTask.Delay(100);
+            star2.Activate();
+        }
+
+        if (starCount >= 3)
+        {
+            await UniTask.Delay(100);
+            star3.Activate();
+        }
+
+        await UniTask.Delay(100);
+        foreach (var o in activatedObjs)
+        {
+            o.SetActive(true);
+        }
     }
 }

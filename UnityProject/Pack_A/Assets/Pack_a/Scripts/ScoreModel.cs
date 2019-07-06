@@ -35,10 +35,10 @@ public class ScoreModel
         if (scoreRate > 50 && scoreRate < 65)
             star = 1;
 
-        else if (scoreRate < 80)
+        else if (scoreRate >= 65 && scoreRate < 80)
             star = 2;
 
-        else if (scoreRate < 90)
+        else if (scoreRate >= 80)
             star = 3;
 
         return star;

@@ -17,12 +17,14 @@ public class TimerScript : MonoBehaviour
     private bool isDanger = false;
     private float nowTime;
     public float SpendTime => limitSeconds - nowTime;
+    private Color defaultColor = Color.black;
 
     // Use this for initialization
     void Start()
     {
         nowTime = limitSeconds;
         timer.text = GetTimeStr();
+        defaultColor = timer.color;
         //StartTimer();
     }
 
@@ -36,6 +38,7 @@ public class TimerScript : MonoBehaviour
         StopTimer();
         isTimeUp = false;
         isDanger = false;
+        timer.color = defaultColor;
         nowTime = limitSeconds;
         timer.text = GetTimeStr();
     }
@@ -47,7 +50,7 @@ public class TimerScript : MonoBehaviour
 
     public string GetTimeStr()
     {
-        return $"{Mathf.FloorToInt(nowTime),0:00}";
+        return $"{Mathf.FloorToInt(nowTime),0:00}.{Mathf.FloorToInt(nowTime*10%10),0:0}";
     }
 
     private IEnumerator TimerCoroutine()
