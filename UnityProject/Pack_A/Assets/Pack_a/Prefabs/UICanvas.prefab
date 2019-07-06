@@ -887,6 +887,7 @@ GameObject:
   - component: {fileID: 5189240223204451905}
   - component: {fileID: 5189240223204451910}
   - component: {fileID: 5189240223204451911}
+  - component: {fileID: 4007865196631083795}
   - component: {fileID: 5189240223204451904}
   m_Layer: 5
   m_Name: NextLevelButton
@@ -951,6 +952,19 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4007865196631083795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189240223204451906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ebc3715daa0df4a96a47c89724b022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageNo: 
 --- !u!114 &5189240223204451904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,6 +1018,7 @@ GameObject:
   - component: {fileID: 5189240223218708746}
   - component: {fileID: 5189240223218708751}
   - component: {fileID: 5189240223218708744}
+  - component: {fileID: 4509362621510219344}
   - component: {fileID: 5189240223218708745}
   m_Layer: 5
   m_Name: BackToSelectButton
@@ -1068,6 +1083,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &4509362621510219344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189240223218708747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2d8b7e3db2971459603b5ccc14d0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5189240223218708745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,6 +1368,7 @@ GameObject:
   - component: {fileID: 5189240223389123534}
   - component: {fileID: 5189240223389123523}
   - component: {fileID: 5189240223389123532}
+  - component: {fileID: 7722408924901965558}
   - component: {fileID: 5189240223389123533}
   m_Layer: 5
   m_Name: BackToSelectButton
@@ -1405,6 +1433,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &7722408924901965558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189240223389123535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2d8b7e3db2971459603b5ccc14d0f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5189240223389123533
 MonoBehaviour:
   m_ObjectHideFlags: 0
