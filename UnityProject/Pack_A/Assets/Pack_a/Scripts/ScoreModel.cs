@@ -32,7 +32,7 @@ public class ScoreModel
         int star = 0;
         int scoreRate = Score * 100 / MaxScore;
 
-        if (scoreRate > 50 && scoreRate < 65)
+        if (scoreRate >= 50 && scoreRate < 65)
             star = 1;
 
         else if (scoreRate >= 65 && scoreRate < 80)
