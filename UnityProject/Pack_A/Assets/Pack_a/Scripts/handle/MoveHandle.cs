@@ -7,13 +7,16 @@ using UniRx;
 
 public class MoveHandle : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
 {
-    [Zenject.Inject] private GameModel model;
     private bool isHolding = false;
     private Transform target;
     private float rotateDelta = 15;
     private Quaternion qRotateDelta;
     private Quaternion qRotateDeltaInv;
     private bool isPlaying = false;
+    [Zenject.Inject] private GameModel model = null;
+    [SerializeField] private Color onMovable = new Color(0, 0.4470588f, 0.6980392f, 1);
+    [SerializeField] private Color onNonMovable = Color.black;
+    private Image image;
 
     void Start()
     {
@@ -21,13 +24,27 @@ public class MoveHandle : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         qRotateDelta = Quaternion.Euler(0, 0, rotateDelta);
         qRotateDeltaInv = Quaternion.Euler(0, 0, -1*rotateDelta);
 
-        model.OnStart.Subscribe(_ => isPlaying = true);
-        model.OnRetry.Subscribe(_ => isPlaying = false);
+        model.OnStart.Subscribe(_ => OnStart());
+        model.OnRetry.Subscribe(_ => OnRetry());
+        image = gameObject.GetComponent<Image>();
+    }
+
+    private void OnStart()
+    {
+        isPlaying = true;
+        image.color = onNonMovable;
+    }
+
+    private void OnRetry()
+    {
+        isPlaying = false;
+        image.color = onMovable;
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         isHolding = true;
+        transform.SetAsLastSibling();
     }
 
     public void OnPointerUp(PointerEventData eventData)
