@@ -7,8 +7,8 @@ using UniRx;
 
 public class ScoreView : MonoBehaviour
 {
-    [SerializeField] private Text score;
-    [Zenject.Inject] private ScoreModel model;
+    [SerializeField] private Text score = null;
+    [Zenject.Inject] private ScoreModel model = null;
 
     void Start()
     {

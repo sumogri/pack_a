@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class ScoreCounter : MonoBehaviour
 {
-    [Zenject.Inject] private ScoreModel model;
+    [Zenject.Inject] private ScoreModel model = null;
     private const string A_TAG = "A";
 
     private void OnTriggerEnter2D(Collider2D collision)
