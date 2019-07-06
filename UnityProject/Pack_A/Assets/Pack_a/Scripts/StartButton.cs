@@ -15,6 +15,7 @@ public class StartButton : MonoBehaviour
         model.OnStart.Subscribe(_ => OnStart());
         model.OnRetry.Subscribe(_ => OnRetry());
         button = gameObject.GetComponent<Button>();
+        button.onClick.AddListener(() => model.Start());
     }
 
     private void OnRetry()
