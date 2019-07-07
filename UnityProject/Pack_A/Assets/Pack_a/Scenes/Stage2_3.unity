@@ -2600,10 +2600,25 @@ PrefabInstance:
       propertyPath: stageNo
       value: 2_3
       objectReference: {fileID: 0}
+    - target: {fileID: 4007865196631083795, guid: 77be97d2e691d1b49ac5fdd29bc6d715,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5189240222346861187, guid: 77be97d2e691d1b49ac5fdd29bc6d715,
         type: 3}
       propertyPath: m_Text
       value: "\u3042"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189240223204451911, guid: 77be97d2e691d1b49ac5fdd29bc6d715,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189240223204451904, guid: 77be97d2e691d1b49ac5fdd29bc6d715,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77be97d2e691d1b49ac5fdd29bc6d715, type: 3}

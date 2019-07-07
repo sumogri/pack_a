@@ -7,6 +7,7 @@ public class StarView : MonoBehaviour
 {
     [SerializeField] private Color activeColor = new Color(1,0.49f,0);
     [SerializeField] private GameObject effect;
+    [SerializeField] private AudioSource audioSource;
     private Color defaultColor = Color.black;
     private Image image;
 
@@ -20,6 +21,7 @@ public class StarView : MonoBehaviour
     {
         image.color = activeColor;
         effect.SetActive(true);
+        audioSource.Play();
     }
 
     public void Init()
