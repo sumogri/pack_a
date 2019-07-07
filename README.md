@@ -12,6 +12,11 @@ Unity 1 week game jam 「あつめる」投稿作品
 - 無心 , MODI工場／倒神神倒
 - BGM , 魔王魂
 - SE , 魔王魂
+- UniTask , [Mitライセンス](https://github.com/Cysharp/UniTask/blob/master/LICENSE)
+- UniRx , [Mitライセンス](https://github.com/neuecc/UniRx/blob/master/LICENSE)
+- Zenject , [Mitライセンス](https://github.com/modesttree/Zenject/blob/master/License.md)
+- ニフクラ moblile backend Unity SDK , [Apache License Version 2.0](https://github.com/NIFCloud-mbaas/ncmb_unity/blob/master/LICENSE)
+- unityroom-tweet , naichi
 
 また、以下のアセットを使用して作成された画像等を含みます。  
 
