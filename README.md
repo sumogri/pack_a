@@ -1,5 +1,8 @@
 # pack_a
 Unity 1 week game jam 「あつめる」投稿作品
+[こちら](https://unityroom.com/games/pack_a)で遊べます  
+
+![game](https://github.com/sumogri/pack_a/blob/master/Readme_data/tutorial.gif)
 
 ## 使用アセット
 このプロジェクトには以下のアセットを含んでいます。  
