@@ -62,7 +62,9 @@ public class MoveHandle : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
         target.position = Camera.main.ScreenToWorldPoint(mousePos);
 
         var scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll > 0) target.rotation *= qRotateDelta;
-        if (scroll < 0) target.rotation *= qRotateDeltaInv;
+        var rotateInput = Input.GetAxis("Rotate");
+        var isButtonDown = Input.GetButtonDown("Rotate");
+        if (scroll > 0 || (isButtonDown && rotateInput > 0)) target.rotation *= qRotateDelta;
+        else if (scroll < 0 || (isButtonDown && rotateInput < 0)) target.rotation *= qRotateDeltaInv;
     }
 }
