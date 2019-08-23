@@ -27,6 +27,8 @@ public class ScoreModel
         MaxScore = maxScore;
     }
 
+    public bool IsPerfect => (MaxScore <= Score);
+
     public int GetStar()
     {
         int star = 0;

@@ -16,6 +16,7 @@ public class ResultView : MonoBehaviour
     [SerializeField] private StarView star1;
     [SerializeField] private StarView star2;
     [SerializeField] private StarView star3;
+    [SerializeField] private PerfectView perfect;
     [SerializeField] private GameObject[] activatedObjs;
     private bool isActivated = false;
     
@@ -39,6 +40,7 @@ public class ResultView : MonoBehaviour
         star1.Init();
         star2.Init();
         star3.Init();
+        perfect.Init();
         foreach(var o in activatedObjs)
         {
             o.SetActive(false);
@@ -71,6 +73,12 @@ public class ResultView : MonoBehaviour
         {
             await UniTask.Delay(100);
             star3.Activate();
+        }
+
+        if (score.IsPerfect)
+        {
+            await UniTask.Delay(100);
+            perfect.Activate();
         }
 
         await UniTask.Delay(100);
