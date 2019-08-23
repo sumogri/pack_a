@@ -55,6 +55,7 @@ public class ResultView : MonoBehaviour
         isActivated = true;
         contentRoot.SetActive(true);
         scoreText.text = score.Score.ToString();
+        var isPerfect = score.IsPerfect;
         var starCount = score.GetStar();
 
         if(starCount >= 1)
@@ -75,7 +76,7 @@ public class ResultView : MonoBehaviour
             star3.Activate();
         }
 
-        if (score.IsPerfect)
+        if (isPerfect)
         {
             await UniTask.Delay(100);
             perfect.Activate();
